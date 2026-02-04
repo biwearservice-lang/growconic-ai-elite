@@ -36,12 +36,17 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center">
-            <img 
-              src={growconicLogo} 
-              alt="Growconic" 
-              className="h-10 w-auto"
-            />
+          <a href="#" className="flex items-center gap-2">
+            <div className="w-10 h-10 rounded-full overflow-hidden bg-background/50 flex items-center justify-center">
+              <img 
+                src={growconicLogo} 
+                alt="Growconic" 
+                className="h-9 w-auto object-contain"
+              />
+            </div>
+            <span className="font-display font-bold text-xl text-foreground">
+              Growconic
+            </span>
           </a>
 
           {/* Desktop Navigation */}
