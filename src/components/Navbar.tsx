@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import growconicLogo from "@/assets/growconic-logo.png";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,13 +36,12 @@ const Navbar = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-600 flex items-center justify-center">
-              <span className="text-background font-display font-bold text-xl">G</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">
-              Growconic
-            </span>
+          <a href="#" className="flex items-center">
+            <img 
+              src={growconicLogo} 
+              alt="Growconic" 
+              className="h-10 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
