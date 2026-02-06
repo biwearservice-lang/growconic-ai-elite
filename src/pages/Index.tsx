@@ -9,6 +9,7 @@ import WhyGrowconic from "@/components/WhyGrowconic";
 import Testimonials from "@/components/Testimonials";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import FloatingContact from "@/components/FloatingContact";
 
 const Index = () => {
   return (
@@ -24,6 +25,7 @@ const Index = () => {
       <Testimonials />
       <FinalCTA />
       <Footer />
+      <FloatingContact />
     </div>
   );
 };
