@@ -55,7 +55,9 @@ const FinalCTA = () => {
             whileTap={{ scale: 0.98 }}
           >
             <a
-              href="mailto:hello@growconic.com"
+              href="https://calendly.com/imranbis369/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-glow inline-flex items-center gap-3 text-lg px-10 py-5 group"
             >
               Book Your Free AI Audit

@@ -65,7 +65,9 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <a
-              href="#contact"
+              href="https://calendly.com/imranbis369/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-glow text-sm"
             >
               Book AI Audit
@@ -101,7 +103,9 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="https://calendly.com/imranbis369/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-glow text-sm text-center mt-4"
               >
                 Book AI Audit
