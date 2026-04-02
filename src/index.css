@@ -190,7 +190,7 @@
 
   /* Radial gradient overlay */
   .radial-overlay {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(188 94% 53% / 0.15), transparent);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(120 100% 54% / 0.15), transparent);
   }
 
   /* Service card hover */
