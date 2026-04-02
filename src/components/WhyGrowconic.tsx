@@ -47,7 +47,7 @@ const WhyGrowconic = () => {
       {/* Background */}
       <div className="absolute inset-0 grid-pattern opacity-20" />
       <motion.div
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-3xl"
+        className="absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full bg-neon-500/5 blur-3xl"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
@@ -60,7 +60,7 @@ const WhyGrowconic = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
+          <span className="text-neon-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
             Why Choose Us
           </span>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
@@ -83,8 +83,8 @@ const WhyGrowconic = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className={`glass-card p-6 ${reason.highlight ? 'glow-border' : ''}`}
             >
-              <div className="w-8 h-8 rounded-lg bg-cyan-500/20 flex items-center justify-center mb-4">
-                <Check className="w-5 h-5 text-cyan-400" />
+              <div className="w-8 h-8 rounded-lg bg-neon-500/20 flex items-center justify-center mb-4">
+                <Check className="w-5 h-5 text-neon-400" />
               </div>
               <h3 className="font-display font-semibold text-lg text-foreground mb-2">
                 {reason.title}
@@ -114,8 +114,8 @@ const WhyGrowconic = () => {
                   key={index}
                   className="grid grid-cols-2 gap-4"
                 >
-                  <div className="flex items-center gap-3 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
-                    <Check className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <div className="flex items-center gap-3 p-4 rounded-xl bg-neon-500/10 border border-neon-500/20">
+                    <Check className="w-5 h-5 text-neon-400 flex-shrink-0" />
                     <span className="text-foreground font-medium">{item.us}</span>
                   </div>
                   <div className="flex items-center gap-3 p-4 rounded-xl bg-destructive/10 border border-destructive/20">

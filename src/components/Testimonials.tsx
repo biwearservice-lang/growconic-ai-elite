@@ -33,7 +33,7 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
+          <span className="text-neon-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
             Results
           </span>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
@@ -57,13 +57,13 @@ const Testimonials = () => {
             >
               {/* Quote Icon */}
               <div className="absolute top-6 right-6">
-                <Quote className="w-8 h-8 text-cyan-500/20" />
+                <Quote className="w-8 h-8 text-neon-500/20" />
               </div>
 
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-cyan-400 text-cyan-400" />
+                  <Star key={i} className="w-4 h-4 fill-neon-400 text-neon-400" />
                 ))}
               </div>
 
@@ -73,8 +73,8 @@ const Testimonials = () => {
               </p>
 
               {/* Metric */}
-              <div className="inline-block px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 mb-6">
-                <span className="text-cyan-400 font-semibold text-sm">
+              <div className="inline-block px-4 py-2 rounded-full bg-neon-500/10 border border-neon-500/20 mb-6">
+                <span className="text-neon-400 font-semibold text-sm">
                   {testimonial.metric}
                 </span>
               </div>

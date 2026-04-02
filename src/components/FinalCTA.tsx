@@ -10,7 +10,7 @@ const FinalCTA = () => {
       
       {/* Animated Glow Orbs */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-cyan-500/10 blur-3xl"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-neon-500/10 blur-3xl"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.2, 0.4, 0.2],
@@ -31,9 +31,9 @@ const FinalCTA = () => {
           className="max-w-4xl mx-auto text-center"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-8">
-            <Sparkles className="w-4 h-4 text-cyan-400" />
-            <span className="text-cyan-400 text-sm font-medium">Limited Spots Available</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-500/30 bg-neon-500/10 mb-8">
+            <Sparkles className="w-4 h-4 text-neon-400" />
+            <span className="text-neon-400 text-sm font-medium">Limited Spots Available</span>
           </div>
 
           {/* Headline */}
