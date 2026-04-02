@@ -22,7 +22,7 @@ const Index = () => {
       <ServicesSection />
       <HowItWorks />
       <WhyGrowconic />
-      <Testimonials />
+      
       <FinalCTA />
       <Footer />
       <FloatingContact />
