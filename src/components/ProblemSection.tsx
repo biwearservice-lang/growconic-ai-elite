@@ -48,7 +48,7 @@ const ProblemSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-neon-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
+          <span className="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
             The Reality
           </span>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
@@ -92,7 +92,7 @@ const ProblemSection = () => {
         >
           <p className="text-lg text-muted-foreground">
             Sound familiar?{" "}
-            <span className="text-neon-400 font-medium">Let's fix it.</span>
+            <span className="text-gold-400 font-medium">Let's fix it.</span>
           </p>
         </motion.div>
       </div>
