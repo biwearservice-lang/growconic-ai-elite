@@ -6,7 +6,7 @@ import SystemVideoSection from "@/components/SystemVideoSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorks from "@/components/HowItWorks";
 import WhyGrowconic from "@/components/WhyGrowconic";
-import Testimonials from "@/components/Testimonials";
+
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
@@ -22,7 +22,7 @@ const Index = () => {
       <ServicesSection />
       <HowItWorks />
       <WhyGrowconic />
-      <Testimonials />
+      
       <FinalCTA />
       <Footer />
       <FloatingContact />
