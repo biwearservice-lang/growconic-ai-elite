@@ -13,17 +13,17 @@ const AuthorityStrip = () => {
           className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16"
         >
           <div className="flex items-center gap-3">
-            <Shield className="w-5 h-5 text-neon-400" />
+            <Shield className="w-5 h-5 text-gold-400" />
             <span className="text-muted-foreground text-sm">Limited Client Onboarding</span>
           </div>
           <div className="hidden md:block w-px h-6 bg-border" />
           <div className="flex items-center gap-3">
-            <Lock className="w-5 h-5 text-neon-400" />
+            <Lock className="w-5 h-5 text-gold-400" />
             <span className="text-muted-foreground text-sm">Enterprise-Grade Security</span>
           </div>
           <div className="hidden md:block w-px h-6 bg-border" />
           <div className="flex items-center gap-3">
-            <Users className="w-5 h-5 text-neon-400" />
+            <Users className="w-5 h-5 text-gold-400" />
             <span className="text-muted-foreground text-sm">Maximum Results Per Client</span>
           </div>
         </motion.div>

@@ -49,7 +49,7 @@ const FloatingContact = () => {
       <motion.button
         whileTap={{ scale: 0.95 }}
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-neon-500 hover:bg-neon-600 text-white shadow-lg shadow-neon-500/30 flex items-center justify-center transition-colors"
+        className="w-14 h-14 rounded-full bg-gold-500 hover:bg-gold-600 text-white shadow-lg shadow-gold-500/30 flex items-center justify-center transition-colors"
       >
         {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
       </motion.button>

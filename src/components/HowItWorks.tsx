@@ -36,7 +36,7 @@ const HowItWorks = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-neon-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
+          <span className="text-gold-400 text-sm font-semibold uppercase tracking-wider mb-4 block">
             The Process
           </span>
           <h2 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-6">
@@ -49,7 +49,7 @@ const HowItWorks = () => {
 
         <div className="relative">
           {/* Connection Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-neon-500/30 to-transparent" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
             {steps.map((step, index) => (
@@ -68,12 +68,12 @@ const HowItWorks = () => {
                   </div>
 
                   {/* Icon */}
-                  <div className="w-12 h-12 rounded-xl bg-neon-500/10 flex items-center justify-center mb-4">
-                    <step.icon className="w-6 h-6 text-neon-400" />
+                  <div className="w-12 h-12 rounded-xl bg-gold-500/10 flex items-center justify-center mb-4">
+                    <step.icon className="w-6 h-6 text-gold-400" />
                   </div>
 
                   {/* Content */}
-                  <span className="text-neon-400 text-sm font-semibold uppercase tracking-wider">
+                  <span className="text-gold-400 text-sm font-semibold uppercase tracking-wider">
                     {step.title}
                   </span>
                   <h3 className="font-display font-bold text-2xl text-foreground mt-2 mb-4">

@@ -10,7 +10,7 @@ const Hero = () => {
       
       {/* Animated Orbs */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-neon-500/10 blur-3xl"
+        className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -41,10 +41,10 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neon-500/30 bg-neon-500/10 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gold-500/30 bg-gold-500/10 mb-8"
           >
-            <Zap className="w-4 h-4 text-neon-400" />
-            <span className="text-neon-400 text-sm font-medium">Production-Ready AI Systems</span>
+            <Zap className="w-4 h-4 text-gold-400" />
+            <span className="text-gold-400 text-sm font-medium">Production-Ready AI Systems</span>
           </motion.div>
 
           {/* Main Headline */}
@@ -117,8 +117,8 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
                 className="glass-card p-6 group hover:scale-105 transition-transform duration-300"
               >
-                <div className="w-12 h-12 rounded-xl bg-neon-500/20 flex items-center justify-center mb-4 group-hover:bg-neon-500/30 transition-colors">
-                  <feature.icon className="w-6 h-6 text-neon-400" />
+                <div className="w-12 h-12 rounded-xl bg-gold-500/20 flex items-center justify-center mb-4 group-hover:bg-gold-500/30 transition-colors">
+                  <feature.icon className="w-6 h-6 text-gold-400" />
                 </div>
                 <h3 className="font-display font-semibold text-lg text-foreground mb-2">
                   {feature.title}
