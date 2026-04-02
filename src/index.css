@@ -200,7 +200,7 @@
 
   .service-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 30px 60px -15px hsl(0 0% 0% / 0.5), 0 0 40px hsl(188 94% 53% / 0.15);
+    box-shadow: 0 30px 60px -15px hsl(0 0% 0% / 0.5), 0 0 40px hsl(120 100% 54% / 0.15);
   }
 
   /* Step number styling */
