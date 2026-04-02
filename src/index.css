@@ -4,71 +4,64 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
-/* Growconic Neon + Carbon Design System */
+/* Growconic Black & Gold Design System */
 
 @layer base {
   :root {
-    /* Carbon Black */
-    --background: 0 0% 7%;
-    /* Near White */
-    --foreground: 0 0% 96%;
+    --background: 0 0% 5%;
+    --foreground: 40 20% 95%;
 
-    /* Dark Carbon */
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 96%;
+    --card: 0 0% 8%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 96%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 40 20% 95%;
 
-    /* Neon Green */
-    --primary: 120 100% 54%;
+    /* Rich Gold */
+    --primary: 43 96% 56%;
     --primary-foreground: 0 0% 5%;
 
-    --secondary: 0 0% 13%;
-    --secondary-foreground: 0 0% 96%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 0 0% 16%;
-    /* Cool Grey */
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 40 10% 55%;
 
-    /* Neon Lime */
-    --accent: 90 100% 50%;
+    /* Warm Gold */
+    --accent: 36 80% 50%;
     --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 96%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 0 0% 16%;
-    --input: 0 0% 13%;
-    --ring: 120 100% 54%;
+    --border: 40 15% 15%;
+    --input: 0 0% 12%;
+    --ring: 43 96% 56%;
 
     --radius: 0.75rem;
 
-    /* Custom Growconic tokens */
-    --glow-cyan: 120 100% 54%;
-    --glow-blue: 90 100% 50%;
-    --glass-bg: 0 0% 12%;
-    --glass-border: 0 0% 20%;
+    --glow-cyan: 43 96% 56%;
+    --glow-blue: 36 80% 50%;
+    --glass-bg: 0 0% 10%;
+    --glass-border: 40 15% 18%;
     
-    /* Gradients */
-    --gradient-glow: linear-gradient(135deg, hsl(120 100% 54% / 0.2), hsl(90 100% 50% / 0.1));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 10%) 100%);
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 96%) 0%, hsl(120 100% 70%) 100%);
-    --gradient-border: linear-gradient(135deg, hsl(120 100% 54% / 0.5), hsl(90 100% 50% / 0.2));
+    --gradient-glow: linear-gradient(135deg, hsl(43 96% 56% / 0.2), hsl(36 80% 50% / 0.1));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 10%) 0%, hsl(0 0% 8%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(40 20% 95%) 0%, hsl(43 96% 65%) 100%);
+    --gradient-border: linear-gradient(135deg, hsl(43 96% 56% / 0.5), hsl(36 80% 50% / 0.2));
     
-    /* Shadows */
-    --shadow-glow: 0 0 40px hsl(120 100% 54% / 0.15);
-    --shadow-glow-strong: 0 0 60px hsl(120 100% 54% / 0.25);
-    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 40px hsl(43 96% 56% / 0.12);
+    --shadow-glow-strong: 0 0 60px hsl(43 96% 56% / 0.2);
+    --shadow-card: 0 25px 50px -12px hsl(0 0% 0% / 0.6);
 
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 96%;
-    --sidebar-primary: 120 100% 54%;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 43 96% 56%;
     --sidebar-primary-foreground: 0 0% 5%;
-    --sidebar-accent: 0 0% 13%;
-    --sidebar-accent-foreground: 0 0% 96%;
-    --sidebar-border: 0 0% 16%;
-    --sidebar-ring: 120 100% 54%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 40 15% 15%;
+    --sidebar-ring: 43 96% 56%;
   }
 
   .dark {
