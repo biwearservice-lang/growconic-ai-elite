@@ -182,7 +182,7 @@
 
   /* Radial gradient overlay */
   .radial-overlay {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(120 100% 54% / 0.15), transparent);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(43 96% 56% / 0.1), transparent);
   }
 
   /* Service card hover */
