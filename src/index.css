@@ -117,9 +117,9 @@
   /* Glassmorphism card */
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
-    background: linear-gradient(180deg, hsl(222 47% 14% / 0.8) 0%, hsl(222 47% 11% / 0.6) 100%);
+    background: linear-gradient(180deg, hsl(0 0% 12% / 0.8) 0%, hsl(0 0% 10% / 0.6) 100%);
     backdrop-filter: blur(20px);
-    border: 1px solid hsl(222 47% 22% / 0.5);
+    border: 1px solid hsl(0 0% 20% / 0.5);
   }
 
   .glass-card::before {
@@ -128,7 +128,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(135deg, hsl(188 94% 53% / 0.3), transparent 50%, hsl(199 95% 60% / 0.1));
+    background: linear-gradient(135deg, hsl(120 100% 54% / 0.3), transparent 50%, hsl(90 100% 50% / 0.1));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
