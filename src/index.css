@@ -169,7 +169,7 @@
 
   /* Glow border */
   .glow-border {
-    box-shadow: 0 0 0 1px hsl(120 100% 54% / 0.2), 0 0 30px hsl(120 100% 54% / 0.1);
+    box-shadow: 0 0 0 1px hsl(43 96% 56% / 0.2), 0 0 30px hsl(43 96% 56% / 0.08);
   }
 
   /* Grid background pattern */
