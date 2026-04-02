@@ -138,13 +138,13 @@
   /* Glow button */
   .btn-glow {
     @apply relative px-8 py-4 font-semibold text-background rounded-xl overflow-hidden;
-    background: linear-gradient(135deg, hsl(188 94% 53%), hsl(199 95% 60%));
-    box-shadow: 0 0 30px hsl(188 94% 53% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.2);
+    background: linear-gradient(135deg, hsl(120 100% 54%), hsl(90 100% 50%));
+    box-shadow: 0 0 30px hsl(120 100% 54% / 0.4), inset 0 1px 0 hsl(0 0% 100% / 0.2);
     transition: all 0.3s ease;
   }
 
   .btn-glow:hover {
-    box-shadow: 0 0 50px hsl(188 94% 53% / 0.6), inset 0 1px 0 hsl(0 0% 100% / 0.3);
+    box-shadow: 0 0 50px hsl(120 100% 54% / 0.6), inset 0 1px 0 hsl(0 0% 100% / 0.3);
     transform: translateY(-2px);
   }
 
