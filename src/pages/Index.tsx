@@ -6,6 +6,7 @@ import SystemVideoSection from "@/components/SystemVideoSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorks from "@/components/HowItWorks";
 import WhyGrowconic from "@/components/WhyGrowconic";
+import ParticlesOverlay from "@/components/ParticlesOverlay";
 
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
@@ -15,11 +16,16 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <Hero />
-      <AuthorityStrip />
-      <ProblemSection />
-      <SystemVideoSection />
-      <ServicesSection />
+      <div className="relative">
+        <ParticlesOverlay />
+        <div className="relative z-[2]">
+          <Hero />
+          <AuthorityStrip />
+          <ProblemSection />
+          <SystemVideoSection />
+          <ServicesSection />
+        </div>
+      </div>
       <HowItWorks />
       <WhyGrowconic />
       
@@ -31,3 +37,4 @@ const Index = () => {
 };
 
 export default Index;
+
