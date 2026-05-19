@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Phone, Bot, Target } from "lucide-react";
+import { MessageSquare, Phone, Bot, Target, Video, Monitor } from "lucide-react";
 
 const services = [
   {
@@ -25,6 +25,18 @@ const services = [
     title: "AI-Powered Lead Generation",
     description: "Growconic builds AI systems that book sales calls while you sleep. Advanced, AI-driven outreach that fills your calendar with qualified prospects ready to buy. We don't just generate leads. We generate revenue. Appointments booked. Deals closed. Growth automated.",
     features: ["Qualified Leads", "Auto Outreach", "Revenue Growth"],
+  },
+  {
+    icon: Video,
+    title: "UGC & Video Editing",
+    description: "Scroll-stopping content that actually sells. We produce authentic UGC-style videos and handle end-to-end editing — hooks, cuts, captions, sound design, and pacing tuned for conversion. Whether it's ads, organic short-form, or long-form storytelling, we craft content that feels native to the platform and built to drive action. No fluff. Just content that performs.",
+    features: ["UGC Creation", "Short-Form Edits", "Ad Creatives"],
+  },
+  {
+    icon: Monitor,
+    title: "Web Design & Development",
+    description: "High-converting websites engineered to close. We design and build fast, modern, conversion-obsessed sites that match the caliber of your brand. Every section, every animation, every CTA is intentional — built to capture attention, build trust, and turn visitors into booked calls. Premium design. Bulletproof code. Built to scale with you.",
+    features: ["Conversion-Focused", "Premium Design", "Lightning Fast"],
   },
 ];
 
