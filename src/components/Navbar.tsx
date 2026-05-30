@@ -20,6 +20,7 @@ const Navbar = () => {
     { name: "How It Works", href: "#how-it-works" },
     { name: "Why Us", href: "#why-us" },
     { name: "Results", href: "#testimonials" },
+    { name: "Imran's Journal", href: "/journal", external: true },
   ];
 
   return (
@@ -55,7 +56,13 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium"
+                target={link.external ? "_blank" : undefined}
+                rel={link.external ? "noopener noreferrer" : undefined}
+                className={`transition-colors duration-200 text-sm font-medium ${
+                  link.external
+                    ? "text-gold-400 hover:text-gold-300 font-semibold"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
               >
                 {link.name}
               </a>
@@ -96,8 +103,12 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium py-2"
+                  className={`transition-colors duration-200 text-sm font-medium py-2 ${
+                    link.external ? "text-gold-400 font-semibold" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {link.name}
                 </a>
