@@ -103,8 +103,12 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium py-2"
+                  className={`transition-colors duration-200 text-sm font-medium py-2 ${
+                    link.external ? "text-gold-400 font-semibold" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 >
                   {link.name}
                 </a>
