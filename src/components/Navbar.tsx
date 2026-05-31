@@ -20,6 +20,7 @@ const Navbar = () => {
     { name: "How It Works", href: "#how-it-works" },
     { name: "Why Us", href: "#why-us" },
     { name: "Results", href: "#testimonials" },
+    { name: "Team", href: "/team", external: true },
     { name: "Imran's Journal", href: "/journal", external: true },
   ];
 
