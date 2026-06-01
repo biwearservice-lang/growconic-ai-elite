@@ -334,10 +334,35 @@ const Comments = ({ postId, user }: { postId: string; user: User | null }) => {
   );
 };
 
-const PostCard = ({ post, user, onChanged }: { post: Post; user: User | null; onChanged: () => void }) => {
+const PostCard = ({ post, user, isAdmin, onChanged }: { post: Post; user: User | null; isAdmin: boolean; onChanged: () => void }) => {
   const [open, setOpen] = useState(false);
   const [liked, setLiked] = useState(post.liked_by_me);
   const [count, setCount] = useState(post.likes_count);
+  const [editing, setEditing] = useState(false);
+  const [editTitle, setEditTitle] = useState(post.title);
+  const [editContent, setEditContent] = useState(post.content);
+  const [saving, setSaving] = useState(false);
+
+  const saveEdit = async () => {
+    if (!editTitle.trim()) return;
+    setSaving(true);
+    const { error } = await supabase.from("journal_posts")
+      .update({ title: editTitle, content: editContent, updated_at: new Date().toISOString() })
+      .eq("id", post.id);
+    setSaving(false);
+    if (error) return toast.error(error.message);
+    toast.success("Updated");
+    setEditing(false);
+    onChanged();
+  };
+
+  const deletePost = async () => {
+    if (!confirm("Delete this post? This cannot be undone.")) return;
+    const { error } = await supabase.from("journal_posts").delete().eq("id", post.id);
+    if (error) return toast.error(error.message);
+    toast.success("Deleted");
+    onChanged();
+  };
 
   const toggleLike = async () => {
     if (!user) return toast.error("Sign in to like");
