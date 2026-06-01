@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
-import { Search, Heart, MessageCircle, ImagePlus, LogIn, LogOut, X, Send, Loader2 } from "lucide-react";
+import { Search, Heart, MessageCircle, ImagePlus, LogIn, LogOut, X, Send, Loader2, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import type { User } from "@supabase/supabase-js";
 
