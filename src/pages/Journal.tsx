@@ -596,7 +596,7 @@ const Journal = () => {
             {search ? "No journals match your search." : "No journals yet. Check back soon."}
           </div>
         ) : (
-          filtered.map((p) => <PostCard key={p.id} post={p} user={user} onChanged={load} />)
+          filtered.map((p) => <PostCard key={p.id} post={p} user={user} isAdmin={isAdmin} onChanged={load} />)
         )}
       </main>
 
