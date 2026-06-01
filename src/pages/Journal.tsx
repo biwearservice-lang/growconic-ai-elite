@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { supabase } from "@/integrations/supabase/client";
-import { Search, Heart, MessageCircle, ImagePlus, LogIn, LogOut, X, Send, Loader2 } from "lucide-react";
+import { Search, Heart, MessageCircle, ImagePlus, LogIn, LogOut, X, Send, Loader2, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import type { User } from "@supabase/supabase-js";
 
@@ -334,10 +334,35 @@ const Comments = ({ postId, user }: { postId: string; user: User | null }) => {
   );
 };
 
-const PostCard = ({ post, user, onChanged }: { post: Post; user: User | null; onChanged: () => void }) => {
+const PostCard = ({ post, user, isAdmin, onChanged }: { post: Post; user: User | null; isAdmin: boolean; onChanged: () => void }) => {
   const [open, setOpen] = useState(false);
   const [liked, setLiked] = useState(post.liked_by_me);
   const [count, setCount] = useState(post.likes_count);
+  const [editing, setEditing] = useState(false);
+  const [editTitle, setEditTitle] = useState(post.title);
+  const [editContent, setEditContent] = useState(post.content);
+  const [saving, setSaving] = useState(false);
+
+  const saveEdit = async () => {
+    if (!editTitle.trim()) return;
+    setSaving(true);
+    const { error } = await supabase.from("journal_posts")
+      .update({ title: editTitle, content: editContent, updated_at: new Date().toISOString() })
+      .eq("id", post.id);
+    setSaving(false);
+    if (error) return toast.error(error.message);
+    toast.success("Updated");
+    setEditing(false);
+    onChanged();
+  };
+
+  const deletePost = async () => {
+    if (!confirm("Delete this post? This cannot be undone.")) return;
+    const { error } = await supabase.from("journal_posts").delete().eq("id", post.id);
+    if (error) return toast.error(error.message);
+    toast.success("Deleted");
+    onChanged();
+  };
 
   const toggleLike = async () => {
     if (!user) return toast.error("Sign in to like");
@@ -365,13 +390,57 @@ const PostCard = ({ post, user, onChanged }: { post: Post; user: User | null; on
             (post.profile?.username || "I").slice(0, 1).toUpperCase()
           )}
         </div>
-        <div>
+        <div className="flex-1">
           <div className="text-sm font-medium text-foreground">{post.profile?.username || "Imran"}</div>
           <div className="text-xs text-muted-foreground">{new Date(post.created_at).toLocaleString()}</div>
         </div>
+        {isAdmin && !editing && (
+          <div className="flex items-center gap-1">
+            <button onClick={() => setEditing(true)} title="Edit" className="p-2 rounded-lg text-muted-foreground hover:text-purple-300 hover:bg-purple-500/10 transition-colors">
+              <Pencil size={16} />
+            </button>
+            <button onClick={deletePost} title="Delete" className="p-2 rounded-lg text-muted-foreground hover:text-red-400 hover:bg-red-500/10 transition-colors">
+              <Trash2 size={16} />
+            </button>
+          </div>
+        )}
       </div>
-      <h3 className="font-display text-2xl font-bold mb-2 text-foreground">{post.title}</h3>
-      {post.content && <p className="text-muted-foreground whitespace-pre-wrap mb-3">{post.content}</p>}
+      {editing ? (
+        <div className="mb-3 space-y-2">
+          <input
+            value={editTitle}
+            onChange={(e) => setEditTitle(e.target.value)}
+            className="w-full px-3 py-2 rounded-lg bg-black/40 border border-purple-500/30 outline-none text-xl font-display font-semibold text-foreground"
+          />
+          <textarea
+            value={editContent}
+            onChange={(e) => setEditContent(e.target.value)}
+            rows={4}
+            className="w-full px-3 py-2 rounded-lg bg-black/40 border border-purple-500/30 outline-none resize-none text-foreground"
+          />
+          <div className="flex gap-2 justify-end">
+            <button
+              onClick={() => { setEditing(false); setEditTitle(post.title); setEditContent(post.content); }}
+              className="px-4 py-2 rounded-lg text-sm text-muted-foreground hover:text-foreground"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={saveEdit}
+              disabled={saving}
+              className="px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-sm font-semibold disabled:opacity-50 flex items-center gap-2"
+            >
+              {saving && <Loader2 className="w-4 h-4 animate-spin" />}
+              Save
+            </button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <h3 className="font-display text-2xl font-bold mb-2 text-foreground">{post.title}</h3>
+          {post.content && <p className="text-muted-foreground whitespace-pre-wrap mb-3">{post.content}</p>}
+        </>
+      )}
       {post.media_urls?.length > 0 && (
         <div className={`grid gap-2 mb-3 ${post.media_urls.length > 1 ? "grid-cols-2" : "grid-cols-1"}`}>
           {post.media_urls.map((m, i) =>
@@ -527,7 +596,7 @@ const Journal = () => {
             {search ? "No journals match your search." : "No journals yet. Check back soon."}
           </div>
         ) : (
-          filtered.map((p) => <PostCard key={p.id} post={p} user={user} onChanged={load} />)
+          filtered.map((p) => <PostCard key={p.id} post={p} user={user} isAdmin={isAdmin} onChanged={load} />)
         )}
       </main>
 
