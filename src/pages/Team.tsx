@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Linkedin, Calendar, Instagram } from "lucide-react";
+import { ArrowLeft, Calendar } from "lucide-react";
 import imranPhoto from "@/assets/imran-biswas.jpeg";
 import shaabanPhoto from "@/assets/shaaban-mullick.png";
 
@@ -145,14 +145,6 @@ const Team = () => {
                   >
                     Book a call with Imran
                   </a>
-                  <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border hover:border-gold-500/40 text-sm font-medium transition-colors"
-                  >
-                    <Linkedin size={16} /> LinkedIn
-                  </a>
                 </div>
               </div>
             </div>
@@ -178,7 +170,7 @@ const Team = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, delay: 0.1 }}
-                className="md:col-span-2 relative md:order-2"
+                className="md:col-span-2 relative"
               >
                 <div className="relative aspect-square rounded-2xl overflow-hidden border border-gold-500/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
                   <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/20 via-transparent to-primary/10 z-10 mix-blend-overlay" />
@@ -189,13 +181,13 @@ const Team = () => {
                   />
                 </div>
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -left-4 px-4 py-2 rounded-full bg-background border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-wider uppercase shadow-xl">
+                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-full bg-background border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-wider uppercase shadow-xl">
                   Vice Chairman
                 </div>
               </motion.div>
 
               {/* Bio */}
-              <div className="md:col-span-3 space-y-6 md:order-1">
+              <div className="md:col-span-3 space-y-6">
                 <div>
                   <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
                     Shaaban Mullick
@@ -251,14 +243,6 @@ const Team = () => {
                     className="btn-glow text-sm"
                   >
                     Book a call
-                  </a>
-                  <a
-                    href="https://www.instagram.com/growconicai/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border hover:border-gold-500/40 text-sm font-medium transition-colors"
-                  >
-                    <Instagram size={16} /> Instagram
                   </a>
                 </div>
               </div>
