@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Linkedin, Calendar } from "lucide-react";
+import { ArrowLeft, Linkedin, Calendar, Instagram } from "lucide-react";
 import imranPhoto from "@/assets/imran-biswas.jpeg";
+import shaabanPhoto from "@/assets/shaaban-mullick.jpg.asset.json";
 
 const Team = () => {
   return (
@@ -151,6 +152,113 @@ const Team = () => {
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border hover:border-gold-500/40 text-sm font-medium transition-colors"
                   >
                     <Linkedin size={16} /> LinkedIn
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Vice Chairman card */}
+        <motion.section
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-6xl mx-auto mt-12"
+        >
+          <div className="relative rounded-3xl border border-border bg-gradient-to-br from-card/80 to-background/40 backdrop-blur-xl p-6 md:p-12 shadow-2xl overflow-hidden">
+            {/* Gold accent line */}
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-400/60 to-transparent" />
+
+            <div className="grid md:grid-cols-5 gap-10 items-center">
+              {/* Photo */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, delay: 0.1 }}
+                className="md:col-span-2 relative md:order-2"
+              >
+                <div className="relative aspect-square rounded-2xl overflow-hidden border border-gold-500/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/20 via-transparent to-primary/10 z-10 mix-blend-overlay" />
+                  <img
+                    src={shaabanPhoto.url}
+                    alt="Shaaban Mullick — Vice Chairman of Growconic AI"
+                    className="w-full h-full object-cover object-top grayscale-[15%]"
+                  />
+                </div>
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-4 px-4 py-2 rounded-full bg-background border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-wider uppercase shadow-xl">
+                  Vice Chairman
+                </div>
+              </motion.div>
+
+              {/* Bio */}
+              <div className="md:col-span-3 space-y-6 md:order-1">
+                <div>
+                  <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+                    Shaaban Mullick
+                  </h2>
+                  <p className="mt-2 text-gold-400 font-medium text-lg">
+                    Vice Chairman
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Calendar size={14} className="text-gold-400" />
+                  <span>Joined Growconic AI · January 2026</span>
+                </div>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  Shaaban brings a deep understanding of Instagram growth, content strategy, and digital distribution. In
+                  a single month he generated <span className="text-foreground font-semibold">20M+ views</span> — turning
+                  content into a powerful engine for attention and audience growth.
+                </p>
+
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                  He leads Growconic&rsquo;s social growth strategy, shaping how the company builds attention, creates
+                  demand, and reaches the right audience. No vanity metrics. No recycled strategies. Just content that
+                  gets seen.
+                </p>
+
+                {/* Stats */}
+                <div className="grid grid-cols-3 gap-4 pt-4">
+                  {[
+                    { value: "20M+", label: "Views / Month" },
+                    { value: "Jan 26", label: "Joined" },
+                    { value: "Social", label: "Growth Lead" },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-border bg-background/40 p-4 text-center"
+                    >
+                      <div className="font-display text-2xl font-bold text-gold-400">
+                        {stat.value}
+                      </div>
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">
+                        {stat.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3 pt-2">
+                  <a
+                    href="https://calendly.com/imranbis369/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-glow text-sm"
+                  >
+                    Book a call
+                  </a>
+                  <a
+                    href="https://www.instagram.com/growconicai/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-border hover:border-gold-500/40 text-sm font-medium transition-colors"
+                  >
+                    <Instagram size={16} /> Instagram
                   </a>
                 </div>
               </div>
