@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Linkedin, Calendar, Instagram } from "lucide-react";
 import imranPhoto from "@/assets/imran-biswas.jpeg";
-import shaabanPhoto from "@/assets/shaaban-mullick.jpg.asset.json";
+import shaabanPhoto from "@/assets/shaaban-mullick.png";
 
 const Team = () => {
   return (
@@ -183,7 +183,7 @@ const Team = () => {
                 <div className="relative aspect-square rounded-2xl overflow-hidden border border-gold-500/20 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.8)]">
                   <div className="absolute inset-0 bg-gradient-to-tr from-gold-500/20 via-transparent to-primary/10 z-10 mix-blend-overlay" />
                   <img
-                    src={shaabanPhoto.url}
+                    src={shaabanPhoto}
                     alt="Shaaban Mullick — Vice Chairman of Growconic AI"
                     className="w-full h-full object-cover object-top grayscale-[15%]"
                   />
