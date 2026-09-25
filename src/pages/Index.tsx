@@ -21,7 +21,6 @@ const Index = () => {
           <Hero />
           <AuthorityStrip />
           <ProblemSection />
-          <SystemVideoSection />
           <ServicesSection />
         </div>
       </div>
