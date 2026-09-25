@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import AuthorityStrip from "@/components/AuthorityStrip";
 import ProblemSection from "@/components/ProblemSection";
-import SystemVideoSection from "@/components/SystemVideoSection";
 import ServicesSection from "@/components/ServicesSection";
 import HowItWorks from "@/components/HowItWorks";
 import WhyGrowconic from "@/components/WhyGrowconic";
@@ -22,7 +21,6 @@ const Index = () => {
           <Hero />
           <AuthorityStrip />
           <ProblemSection />
-          <SystemVideoSection />
           <ServicesSection />
         </div>
       </div>
