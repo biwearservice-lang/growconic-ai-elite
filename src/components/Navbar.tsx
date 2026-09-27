@@ -91,15 +91,23 @@ const Navbar = () => {
           </button>
         </div>
 
+        {/* Mobile Menu Backdrop Blur */}
+        {isMobileMenuOpen && (
+          <div
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="md:hidden fixed inset-0 z-[-1] bg-background/70 backdrop-blur-xl"
+          />
+        )}
+
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden pb-6"
+            className="md:hidden relative pb-6"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 rounded-2xl bg-card/80 backdrop-blur-2xl border border-border p-6 shadow-[0_8px_40px_rgba(0,0,0,0.5)]">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
