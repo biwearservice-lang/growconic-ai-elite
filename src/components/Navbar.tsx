@@ -91,14 +91,6 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu Backdrop Blur */}
-        {isMobileMenuOpen && (
-          <div
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="md:hidden fixed inset-0 z-[-1] bg-background/70 backdrop-blur-xl"
-          />
-        )}
-
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <motion.div
