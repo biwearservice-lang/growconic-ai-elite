@@ -8,6 +8,9 @@
 
 @layer base {
   :root {
+    --journal-intro-black: #000000;
+    --journal-intro-blue: #38BDF8;
+    --journal-intro-white: #FFFFFF;
     --background: 0 0% 5%;
     --foreground: 270 15% 96%;
 
@@ -107,6 +110,49 @@
 }
 
 @layer components {
+  .journal-intro {
+    background: var(--journal-intro-black);
+    color: var(--journal-intro-white);
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --accent: 198 93% 60%;
+    --accent-foreground: 0 0% 100%;
+    --ring: 198 93% 60%;
+  }
+
+  .journal-intro-skip {
+    color: var(--journal-intro-white);
+    opacity: 0.7;
+    border: 1px solid color-mix(in srgb, var(--journal-intro-white) 20%, transparent);
+    background: transparent;
+  }
+
+  .journal-intro-skip:hover {
+    opacity: 1;
+    color: var(--journal-intro-blue);
+    background: color-mix(in srgb, var(--journal-intro-blue) 10%, transparent);
+  }
+
+  .journal-intro-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    text-shadow: 0 0 20px var(--journal-intro-blue);
+    animation: journal-intro-fallback 3s ease-in-out both;
+  }
+
+  @keyframes journal-intro-fallback {
+    0%, 33% { opacity: 0; }
+    60%, 86.66% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
   /* Glassmorphism card */
   .glass-card {
     @apply relative overflow-hidden rounded-2xl;
