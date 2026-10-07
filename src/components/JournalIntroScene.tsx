@@ -55,8 +55,8 @@ function Letter({ geometry, index, x, y, startedAt, palette }: {
   });
   return <group ref={group} visible={false}>
     <mesh geometry={geometry}>
-      <meshStandardMaterial ref={material} color={palette.white} emissive={palette.blue}
-        emissiveIntensity={0.06} metalness={0.48} roughness={0.19} transparent opacity={0} />
+      <meshStandardMaterial ref={material} color={palette.white} emissive={palette.white}
+        emissiveIntensity={0.4} metalness={0.3} roughness={0.19} transparent opacity={0} />
     </mesh>
     <mesh geometry={geometry} position-z={0.006}>
       <shaderMaterial uniforms={uniforms} vertexShader={shineVertex} fragmentShader={shineFragment}
@@ -144,7 +144,8 @@ export default function JournalIntroScene({ startedAt, palette, reducedMotion }:
     });
   }, [mobile]);
   useEffect(() => () => letters.forEach(({ geometry }) => geometry.dispose()), [letters]);
-  const width = mobile ? 5.55 : 10.8;
+  const width = Math.max(...letters.map((letter) => letter.x + (letter.geometry.boundingBox?.max.x ?? 0)))
+    - Math.min(...letters.map((letter) => letter.x + (letter.geometry.boundingBox?.min.x ?? 0)));
   const scale = Math.min(viewport.width * 0.82 / width, viewport.height * 0.5 / (mobile ? 2.7 : 1.8), 1);
   useFrame(({ camera }) => {
     const t = (performance.now() - startedAt) / 1000;
