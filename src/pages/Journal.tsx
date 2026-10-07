@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Search, Heart, MessageCircle, ImagePlus, LogIn, LogOut, X, Send, Loader2, Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import type { User } from "@supabase/supabase-js";
+import JournalIntro from "@/components/JournalIntro";
 
 type Profile = { id: string; username: string | null; avatar_url: string | null };
 type Post = {
@@ -21,58 +22,6 @@ type Post = {
 type Comment = { id: string; content: string; created_at: string; user_id: string; profile?: Profile | null };
 
 const IMRAN_EMAIL = "imran@growconic.local";
-
-const Splash = ({ onDone }: { onDone: () => void }) => {
-  useEffect(() => {
-    const t = setTimeout(onDone, 2600);
-    return () => clearTimeout(t);
-  }, [onDone]);
-  return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black overflow-hidden"
-    >
-      {/* radial purple glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(270_91%_30%/0.5),transparent_60%)]" />
-      {/* particles */}
-      {Array.from({ length: 40 }).map((_, i) => (
-        <motion.span
-          key={i}
-          initial={{ y: -20, x: Math.random() * window.innerWidth, opacity: 0 }}
-          animate={{ y: window.innerHeight + 20, opacity: [0, 1, 0] }}
-          transition={{ duration: 2.4 + Math.random() * 1.5, delay: Math.random() * 0.6, ease: "linear" }}
-          className="absolute w-1 h-1 rounded-full bg-[#f5c542] shadow-[0_0_8px_#f5c542]"
-        />
-      ))}
-      <motion.h1
-        initial={{ scale: 0.6, opacity: 0, letterSpacing: "0.5em" }}
-        animate={{ scale: 1, opacity: 1, letterSpacing: "0.04em" }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="relative font-display text-5xl md:text-7xl font-black text-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(120deg, #b8862a 0%, #f5c542 25%, #fff3b0 45%, #f5c542 65%, #b8862a 100%)",
-          backgroundSize: "200% 100%",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          filter: "drop-shadow(0 0 30px rgba(245,197,66,0.45))",
-          animation: "shimmer 2.4s linear infinite",
-        }}
-      >
-        Imran's Journal
-      </motion.h1>
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ delay: 1, duration: 1 }}
-        className="absolute bottom-1/2 translate-y-16 w-48 h-px bg-gradient-to-r from-transparent via-[#f5c542] to-transparent origin-center"
-      />
-    </motion.div>
-  );
-};
 
 const AuthModal = ({ onClose, onAuthed }: { onClose: () => void; onAuthed: () => void }) => {
   const [mode, setMode] = useState<"login" | "signup">("login");
@@ -468,7 +417,6 @@ const PostCard = ({ post, user, isAdmin, onChanged }: { post: Post; user: User |
 };
 
 const Journal = () => {
-  const [showSplash, setShowSplash] = useState(true);
   const [user, setUser] = useState<User | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [posts, setPosts] = useState<Post[]>([]);
@@ -546,7 +494,7 @@ const Journal = () => {
 
   return (
     <div className="min-h-screen bg-black text-foreground relative">
-      <AnimatePresence>{showSplash && <Splash onDone={() => setShowSplash(false)} />}</AnimatePresence>
+      <JournalIntro />
 
       {/* Top bar */}
       <header className="sticky top-0 z-40 bg-black/80 backdrop-blur-xl border-b border-purple-500/20">
