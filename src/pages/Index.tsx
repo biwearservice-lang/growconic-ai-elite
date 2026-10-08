@@ -7,7 +7,7 @@ import HowItWorks from "@/components/HowItWorks";
 import WhyGrowconic from "@/components/WhyGrowconic";
 import ParticlesOverlay from "@/components/ParticlesOverlay";
 
-import FinalCTA from "@/components/FinalCTA";
+import DiscordCommunity from "@/components/DiscordCommunity";
 import FloatingContact from "@/components/FloatingContact";
 
 const Index = () => {
@@ -26,7 +26,7 @@ const Index = () => {
       <HowItWorks />
       <WhyGrowconic />
       
-      <FinalCTA />
+      <DiscordCommunity />
       <FloatingContact />
     </div>
   );
