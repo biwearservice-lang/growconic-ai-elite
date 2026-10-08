@@ -78,7 +78,7 @@ const DiscordCommunity = () => {
                 href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-glow w-full text-center"
+                className="btn-glow inline-flex w-full items-center justify-center text-center"
               >
                 Join Free Now
               </a>
