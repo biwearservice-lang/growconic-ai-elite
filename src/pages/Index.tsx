@@ -8,7 +8,6 @@ import WhyGrowconic from "@/components/WhyGrowconic";
 import ParticlesOverlay from "@/components/ParticlesOverlay";
 
 import FinalCTA from "@/components/FinalCTA";
-import Footer from "@/components/Footer";
 import FloatingContact from "@/components/FloatingContact";
 
 const Index = () => {
@@ -28,7 +27,6 @@ const Index = () => {
       <WhyGrowconic />
       
       <FinalCTA />
-      <Footer />
       <FloatingContact />
     </div>
   );
