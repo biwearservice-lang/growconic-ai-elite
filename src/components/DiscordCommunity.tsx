@@ -8,7 +8,7 @@ const DiscordCommunity = () => {
       <div className="absolute inset-0 radial-overlay" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start max-w-6xl mx-auto">
           {/* Left — Description */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -57,9 +57,9 @@ const DiscordCommunity = () => {
             className="flex flex-col items-center lg:items-start"
           >
             <div className="glass-card p-2 w-full max-w-[400px]">
-
               <iframe
                 src="https://discord.com/widget?id=1554367143393493053&theme=dark"
+
                 width="350"
                 height="500"
                 allowTransparency={true}
