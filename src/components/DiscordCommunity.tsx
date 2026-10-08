@@ -52,10 +52,10 @@ const DiscordCommunity = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="flex flex-col items-center lg:items-start"
           >
-            <h2 className="font-display font-bold text-3xl md:text-4xl lg:text-5xl text-foreground mb-8 text-center lg:text-left leading-tight">
-              Join my free community{" "}
-              <span className="text-gradient">to learn about AI</span>
+            <h2 className="heading-bright font-display font-extrabold text-3xl md:text-4xl lg:text-5xl mb-8 text-center lg:text-left leading-tight tracking-tight">
+              Join my free community to learn about AI
             </h2>
+
 
             <div className="glass-card p-2 w-full max-w-[400px]">
               <iframe
