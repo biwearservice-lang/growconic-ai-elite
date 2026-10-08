@@ -8,7 +8,7 @@ const DiscordCommunity = () => {
       <div className="absolute inset-0 radial-overlay" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start max-w-6xl mx-auto">
           {/* Left — Description */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -16,9 +16,13 @@ const DiscordCommunity = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <h2 className="heading-bright font-display font-extrabold text-3xl md:text-4xl lg:text-5xl mb-8 text-center lg:text-left leading-tight tracking-tight">
+              Join my free community to learn about AI
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               We're on a mission to make AI automation accessible to everyone.
             </p>
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               Everyone knows AI is the future, but most people don't know how
               to take advantage of it. We do, and we're already well ahead in
@@ -44,7 +48,7 @@ const DiscordCommunity = () => {
             </p>
           </motion.div>
 
-          {/* Right — Heading + Discord Widget */}
+          {/* Right — Discord Widget */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -52,14 +56,10 @@ const DiscordCommunity = () => {
             transition={{ duration: 0.8, delay: 0.15 }}
             className="flex flex-col items-center lg:items-start"
           >
-            <h2 className="heading-bright font-display font-extrabold text-3xl md:text-4xl lg:text-5xl mb-8 text-center lg:text-left leading-tight tracking-tight">
-              Join my free community to learn about AI
-            </h2>
-
-
             <div className="glass-card p-2 w-full max-w-[400px]">
               <iframe
                 src="https://discord.com/widget?id=1554367143393493053&theme=dark"
+
                 width="350"
                 height="500"
                 allowTransparency={true}
