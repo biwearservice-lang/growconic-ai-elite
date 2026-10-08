@@ -26,7 +26,7 @@ const Index = () => {
       <HowItWorks />
       <WhyGrowconic />
       
-      <FinalCTA />
+      <DiscordCommunity />
       <FloatingContact />
     </div>
   );
