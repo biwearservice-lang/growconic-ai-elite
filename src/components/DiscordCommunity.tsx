@@ -20,9 +20,13 @@ const DiscordCommunity = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
+            <h2 className="heading-bright font-display font-extrabold text-3xl md:text-4xl lg:text-5xl text-center lg:text-left leading-tight tracking-tight mb-8">
+              Learn how to use AI in my free community and become an AI expert
+            </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               We're on a mission to make AI automation accessible to everyone.
             </p>
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
               Everyone knows AI is the future, but most people don't know how
               to take advantage of it. We do, and we're already well ahead in
