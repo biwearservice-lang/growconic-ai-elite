@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Bot, TrendingUp } from "lucide-react";
 import robotVideo from "@/assets/growconic-hero-robot.mp4.asset.json";
+import robotWebVideo from "@/assets/growconic-hero-robot.webm.asset.json";
 
 const Hero = () => {
   return (
@@ -46,8 +47,10 @@ const Hero = () => {
                 playsInline
                 preload="auto"
                 className="absolute inset-0 h-full w-full object-cover object-center motion-reduce:hidden"
-                src={robotVideo.url}
-              />
+              >
+                <source src={robotWebVideo.url} type="video/webm" />
+                <source src={robotVideo.url} type="video/mp4" />
+              </video>
               <div className="hero-video-shade absolute inset-0" />
             </div>
           {/* Badge */}
