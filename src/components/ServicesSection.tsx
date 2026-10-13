@@ -11,7 +11,7 @@ import {
   ChevronRight,
   type LucideIcon,
 } from "lucide-react";
-import ServiceShowcase, { readServicePalette } from "./services3d/ServiceShowcase";
+import ServiceShowcase from "./services3d/ServiceShowcase";
 
 interface Service {
   icon: LucideIcon;
@@ -87,7 +87,6 @@ const ServicesSection = () => {
   const [phase, setPhase] = useState<"in" | "out">("in");
   const phaseTimer = useRef<number | undefined>(undefined);
   const touchX = useRef<number | null>(null);
-  const palette = useMemo(readServicePalette, []);
 
   const lowPower = useMemo(() => {
     if (typeof window === "undefined") return true;
