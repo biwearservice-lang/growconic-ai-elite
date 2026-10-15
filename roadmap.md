@@ -1,4 +1,5 @@
 # Homepage
+- [ ] Fix published robot visibility under reduced motion, delayed loading, and blocked autoplay; verify without changing other content.
 - [x] Remove the footer (logo blurb, Services/Company link columns, copyright bar).
 - [x] Place the uploaded video behind only the opening text and buttons; verify playback and section boundaries.
 
