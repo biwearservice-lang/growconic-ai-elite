@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   MessageSquare,
@@ -11,7 +11,6 @@ import {
   ChevronRight,
   type LucideIcon,
 } from "lucide-react";
-import ServiceShowcase from "./services3d/ServiceShowcase";
 
 interface Service {
   icon: LucideIcon;
@@ -66,34 +65,13 @@ const services: Service[] = [
   },
 ];
 
-const SLIDE_MS = 300;
 const AUTO_ADVANCE_MS = 6000;
-
-function LowPowerPreview({ icon: Icon }: { icon: LucideIcon }) {
-  return (
-    <div className="flex h-full flex-col items-center justify-center">
-      <div className="animate-float rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/20 to-accent/10 p-10">
-        <Icon className="h-14 w-14 text-primary" />
-      </div>
-    </div>
-  );
-}
 
 const ServicesSection = () => {
   const [index, setIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
-  const [shown, setShown] = useState(0);
-  const [phase, setPhase] = useState<"in" | "out">("in");
-  const phaseTimer = useRef<number | undefined>(undefined);
   const touchX = useRef<number | null>(null);
-
-  const lowPower = useMemo(() => {
-    if (typeof window === "undefined") return true;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return true;
-    const nav = navigator as Navigator & { deviceMemory?: number };
-    return (nav.deviceMemory ?? 8) < 4 || (navigator.hardwareConcurrency ?? 8) <= 2;
-  }, []);
 
   const goTo = useCallback(
     (next: number) => {
@@ -109,18 +87,6 @@ const ServicesSection = () => {
     },
     [goTo, index]
   );
-
-  // Slide choreography: the current object exits, then the next enters.
-  useEffect(() => {
-    if (index === shown) return;
-    setPhase("out");
-    window.clearTimeout(phaseTimer.current);
-    phaseTimer.current = window.setTimeout(() => {
-      setShown(index);
-      setPhase("in");
-    }, SLIDE_MS);
-    return () => window.clearTimeout(phaseTimer.current);
-  }, [index, shown]);
 
   // Auto-advance; resets whenever the active service changes.
   useEffect(() => {
@@ -176,25 +142,44 @@ const ServicesSection = () => {
         </motion.div>
 
         <div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-6xl mx-auto"
+          className="max-w-3xl mx-auto"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          {/* 3D showcase */}
+          {/* Service text occupies the former showcase position. */}
           <div
             className="relative"
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
           >
-            <div className="relative mx-auto w-full max-w-[540px] overflow-hidden rounded-3xl border border-border bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.12),transparent_65%)] shadow-[var(--shadow-card)]">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(var(--primary)/0.12),transparent_65%)]" />
-              <div className="relative h-[320px] sm:h-[400px] lg:h-[460px]">
-                {lowPower ? (
-                  <LowPowerPreview icon={services[shown].icon} />
-                ) : (
-                  <ServiceShowcase index={shown} phase={phase} direction={direction} />
-                )}
-              </div>
+            <div className="glass-card min-h-[460px] sm:min-h-[400px]">
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: direction * 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: direction * -30 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="p-6 sm:p-8"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-6">
+                    <active.icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="font-display font-bold text-xl text-foreground mb-3">
+                    {active.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {active.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {active.features.map((feature) => (
+                      <span key={feature} className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Arrows */}
@@ -236,44 +221,6 @@ const ServicesSection = () => {
             </div>
           </div>
 
-          {/* Info panel */}
-          <div className="relative min-h-[420px] lg:min-h-[460px]">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: direction * 90 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: direction * -90 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="service-card"
-              >
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 flex items-center justify-center mb-6">
-                  <active.icon className="w-7 h-7 text-primary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="font-display font-bold text-xl text-foreground mb-3">
-                  {active.title}
-                </h3>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  {active.description}
-                </p>
-
-                {/* Features */}
-                <div className="flex flex-wrap gap-2">
-                  {active.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
         </div>
       </div>
     </section>
