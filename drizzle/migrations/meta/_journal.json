@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794764458318,
+      "tag": "0000_restrict_journal_reads_to_owners",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794764484705,
+      "tag": "0001_keep_journal_reads_for_signed_in_members",
+      "breakpoints": true
+    }
+  ]
+}
